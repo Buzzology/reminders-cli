@@ -12,3 +12,18 @@ Simple nodejs application that displays desktop notifications.
 
 ### Run the node notifier
 node notifier.js  
+
+## Examples
+
+### Os-Args
+Handle os args with manual parsing.
+
+### Flagsets
+Handle os args using flagsets. Note that running `./flagsets greet --help` provides built in dialog.
+
+### Flag-Value
+Using flagsets to grab custom types from command line args. Usage example:  
+```
+> ./flag-value --id=1 --id=5 --id=2523
+1,5,2523
+```
