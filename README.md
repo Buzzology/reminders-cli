@@ -13,6 +13,9 @@ Simple nodejs application that displays desktop notifications.
 ### Run the node notifier
 node notifier.js  
 
+## Using make
+Note that on windows this needs to be installed separately. You may also need to add an "exe" extension to the dll in order to circumvent the "Choose a program to run this file" prompt.  
+
 ## Examples
 
 ### Os-Args
@@ -24,6 +27,7 @@ Handle os args using flagsets. Note that running `./flagsets greet --help` provi
 ### Flag-Value
 Using flagsets to grab custom types from command line args. Usage example:  
 ```
-> ./flag-value --id=1 --id=5 --id=2523
+> ./flag-value --id=1 --id=5 --id=2523 -name="Chris"
 1,5,2523
+Hello, my name is Chris and I was born 2021
 ```
