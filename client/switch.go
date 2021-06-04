@@ -115,6 +115,10 @@ func (s Switch) edit() func(string) error {
 			return err
 		}
 
+		if len(ids) == 0 {
+			return fmt.Errorf("No ids provided: %v", ids)
+		}
+
 		lastID := ids[len(ids) -1]
 		res, err := s.client.Edit(lastID, *title, *message, *duration)
 		if err != nil {
@@ -122,7 +126,7 @@ func (s Switch) edit() func(string) error {
 		}
 
 
-		fmt.Printf("Reminder editted: \n%s", string(res)) // Convert byte slice to string
+		fmt.Printf("Reminder edited: \n%s", string(res)) // Convert byte slice to string
 		return nil
 	}
 }
@@ -231,7 +235,7 @@ func (s Switch) checkArgs(minArgs int) error {
 
 	if len(os.Args)-2 < minArgs {
 		fmt.Printf("Incorrect use of %s\n%s %s --help\n", os.Args[1], os.Args[0], os.Args[1])
-		return fmt.Errorf("%s expects at least %d arguments, %d provided ", os.Args[1], minArgs, len(os.Args))
+		return fmt.Errorf("%s expects at least %d arguments, %d provided ", os.Args[1], minArgs, len(os.Args)-2)
 	}
 
 	return nil

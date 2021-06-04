@@ -31,3 +31,17 @@ Using flagsets to grab custom types from command line args. Usage example:
 1,5,2523
 Hello, my name is Chris and I was born 2021
 ```
+
+
+## Client commands
+After running `make client` you can use the following:
+Create: `./bin/client.exe create t="Some title" m="My Message" d=1`  
+Edit: `./bin/client.exe create id=1 t="Some title" m="My Message" d=1`  
+Delete: `./bin/client.exe delete id=1`  
+Health: `./bin/client.exe health`  
+
+Or to run without creating a bin use:
+Edit: `go run cmd/client/main.go edit -id="1" t="test Title" m="test message" d=3`
+
+
+
